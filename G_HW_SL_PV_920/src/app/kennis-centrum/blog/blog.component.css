@@ -1,0 +1,18 @@
+.reactie {
+  border: 1px solid rgba(0,0,0,.125);
+  background-color: #FCFCFC;
+  border-radius: 5px;
+}
+
+.reacties {
+  border-radius: 15px;
+}
+
+.card-block {
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+button {
+  font-size: 150%;
+  border-radius: 15px;
+}

@@ -1,0 +1,142 @@
+<div *ngIf="gebruiker">
+  <div class="card-group">
+
+    <div style="width: 30%; margin: 3%">
+      <div class="card text-center">
+        <img class="card-img-top" src="../../../assets/profielavatar.png" alt="Card image cap" class="img-circle" style="display: block; width: 80px; margin: -40px auto 0;">
+        <div class="card-block">
+
+          <div *ngIf="aanpassen==false">
+            <h2 class="card-title font-weight-bold">{{gebruiker.volledigeNaam}}</h2>
+            <div class="row offset-4 mt-3">
+              <p class="card-text ">Kleur:</p>
+              <button class="btn mt-2 ml-4" type="button" style="width: 20%; height: 50%;" [style.background-color]="gebruiker.kleur"></button>
+            </div>
+            <button class="btn btn-primary btn-lg" (click)="aanpassenToggle()">Profiel bewerken</button>
+          </div>
+
+          <div *ngIf="aanpassen">
+            <form [formGroup]="aanpassingen" (ngSubmit)="onSubmit()">
+              <div class="form-group row">
+                <label for="naam" class="col-2 col-form-label">Voornaam:</label>
+                <div class="col-10">
+                  <input type="text" id="naam" disabled class="form-control" formControlName="naam" value="{{gebruiker.volledigeNaam}}">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="colorpicker" class="col-2 col-form-label">Kleur:</label>
+                <div class="col-10">
+                  <color-picker id="colorpicker" [(ngModel)]="color" [availableColors]="availableColors" [pickerConfig]="pickerOptions"
+                                [ngModelOptions]="{standalone: true}">
+                  </color-picker>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-success btn-lg" (click)="onSubmit()">
+                <span class="glyphicon glyphicon-ok"></span>
+              </button>
+              <button type="submit" class="btn btn-danger btn-lg" (click)="aanpassenToggle()">
+                Annuleer
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card" style="margin:3%;">
+      <h3 class="card-header">Gezinnen</h3>
+      <div class="card-block">
+        <h2 class="card-title text-center">Ackermans - De Meulenaere</h2>
+        <div class="row">
+          <label for="ouders" class="col-2 col-form-label">Ouders:</label>
+          <div class="col-4">
+            <p id="ouders">
+              Piet Ackermans
+              <br>Emma De Meulenaere
+            </p>
+          </div>
+          <label for="kinderen" class="col-2 col-form-label">Kinderen:</label>
+          <div class="col-4">
+            <p id="Kinderen">
+              Gilles
+              <br>Lucas
+            </p>
+          </div>
+        </div>
+        <div clas="row">
+          <h3>Opkomende activiteiten</h3>
+          <p> volgende actieveiten lijstje</p>
+          <p> volgende actieveiten lijstje</p>
+          <p> volgende actieveiten lijstje</p>
+          <p> volgende actieveiten lijstje</p>
+        </div>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <!--<div class="card-header col-4 ">
+      Profiel
+    </div>
+    <div class="card-block">
+      <h4 class="card-title">{{gebruiker.volledigeNaam}}</h4>
+      <p class="card-text">Kleur:{{gebruiker.kleur}}</p>
+    </div>
+    <button (click)="aanpassenToggle()">Profiel bewerken</button>
+  </div>-->
+</div>
+
+
+
+
+
+
+
+
+
+<!--    <form [formGroup]="aanpassingen" (ngSubmit)="onSubmit()">
+      <div class="card-header">
+        Profiel
+      </div>
+      <div class="card-block">
+        <div class="form-group col-4 row">
+          <label>Naam:</label>
+          <input type="text" id="naam" class="form-control" formControlName="naam" placeholder="{{gebruiker.volledigeNaam}}">
+        </div>
+        <p class="card-text">Kleur:{{gebruiker.kleur}}</p>
+        <div>
+          <color-picker [(ngModel)]="gebruiker.kleur" [availableColors]="availableColors" [pickerConfig]="pickerOptions" [ngModelOptions]="{standalone: true}">
+          </color-picker>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success" (click)="onSubmit()">
+        <span class="glyphicon glyphicon-ok"></span>
+      </button>
+    </form>
+  </div>
+</div>
+-->
+
+
+<!--
+<div *ngIf="gebruiker" class="col-6 offset-3 mt-5 text-center">
+  <h2>{{gebruiker.voornaam}} {{gebruiker.familienaam}}</h2>
+  <h3>email= {{gebruiker.email}}, Id = {{gebruiker.id}}, gezinid= {{gebruiker.huidigGezinId}}</h3>
+</div>
+<div *ngIf="!gebruiker">
+  geen gebruiker
+</div>
+<div *ngIf="huidigGezin" class="col-6 offset-3 mt-5 text-center">
+  <h2>heeft een gezin, gezinId = {{huidigGezin.id}}</h2>
+</div>
+<div *ngIf="!huidigGezin" class="col-6 offset-3 mt-5 text-center">
+  <h2>heeft geen gezin</h2>
+</div>-->
+
+<!--<div *ngIf="eigenProfiel">
+  <app-profiel-bekijken></app-profiel-bekijken>
+</div>
+<div *ngIf="!eigenProfiel">
+  <app-profiel-andere-bekijken [andereGebruiker]="andereGebruiker"></app-profiel-andere-bekijken>
+</div>-->

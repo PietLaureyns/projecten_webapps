@@ -1,0 +1,30 @@
+.blogs {
+  background-image: url('../../assets/bluebackground_website.jpg') !important;
+}
+
+.blog {
+  border: solid rgba(0,0,0,.125) 2px;
+  border-radius: 30px;
+  background-color: white;
+}
+
+.blog:hover {
+  cursor: pointer;
+  background-color: #cccccc;
+}
+
+.titel {
+  padding-left: 50px;
+  text-align: left;
+  font-size: 150%;
+}
+
+.datum {
+  text-align: center;
+  font-size: 125%;
+}
+
+.reacties {
+  text-align: right;
+  font-size: 125%;
+}

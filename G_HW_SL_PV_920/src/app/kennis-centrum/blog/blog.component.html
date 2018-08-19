@@ -1,0 +1,48 @@
+<div *ngIf="blog" class="col-8 offset-2 mt-5">
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-1 mt-4">
+          <a><button class="btn" (click)="backbtnClick()"><span class="glyphicon glyphicon-chevron-left"></span></button></a>
+        </div>
+        <div class="col-7 pl-5">
+          <h1>{{blog.titel}}</h1>
+        </div>
+        <div class="col-4 mt-5 pr-5">
+          <strong><p align="right">{{blog.getDatum()}}</p></strong>
+        </div>
+      </div>
+    </div>
+    <div class="card-block m-3" >
+      <p style="white-space: pre-wrap; overflow-wrap: break-word;">{{blog.beschrijving}}</p>
+    </div>
+    <div class="p-5" style="border-top:solid grey 2px">
+      <div class="mb-3">
+        <h2 style="font-size: 200%">Reacties:</h2>
+      </div>
+      <div class="reacties ">
+        <div *ngFor="let reactie of blog.reacties">
+          <div *ngIf="reactie.auteursId == userId" class="reactie p-4 mb-4" [style.backgroundColor]="kleur">
+            <div><strong>{{reactie.auteursNaam}}</strong> | {{reactie.getDatum()}}</div>
+            <br />
+            <div class="col-12">
+              <textarea rows="10" class="form-control" style="white-space: pre-wrap;" readonly style="font-size:100%;">{{reactie.inhoud}}</textarea>
+            </div>
+          </div>
+          <div *ngIf="reactie.auteursId != userId" class="reactie p-4 mb-4">
+            <div><strong>{{reactie.auteursNaam}}</strong> | {{reactie.getDatum()}}</div>
+            <br />
+            <div class="col-12">
+              <textarea rows="10" class="form-control" style="white-space: pre-wrap;" readonly style="font-size:100%;">{{reactie.inhoud}}</textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div align="right" class="mb-5 mr-5">
+        <button class="btn btn-primary" (click)="nieuweReactieToevoegenClick()"><span class="glyphicon glyphicon-plus"></span> Nieuwe reactie</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

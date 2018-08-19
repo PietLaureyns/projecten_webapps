@@ -1,0 +1,28 @@
+<h1 align="center">Nieuwe Blog</h1>
+<form [formGroup]="blog" (ngSubmit)="onSubmit()">
+  <div class="form-group row mt-3">
+    <div class="col-2 labelDiv">
+      <label class="col-form-label" for="titel"><b>Titel:</b></label>
+    </div>
+    <div class="col-10">
+      <input id="titel" type="text" class="form-control" formControlName="titel" />
+    </div>
+  </div>
+  <div class="form-group row mt-3 mb-3">
+    <div class="col-2 labelDiv">
+      <label class="col-form-label" for="beschrijving"><b>Inhoud:</b></label>
+    </div>
+    <div class="col-10">
+      <textarea rows="10" id="beschrijving" class="form-control" formControlName="beschrijving"></textarea>
+    </div>
+  </div>
+  <br />
+  <div align="center">
+    <button type="submit" (click)="onSubmit()" class="btn btn-primary mr-5">
+      <span class="glyphicon glyphicon-ok"></span> Maak aan
+    </button>
+    <button type="button" (click)="annuleer()" class="btn btn-danger ml-5">
+      <span class="glyphicon glyphicon-remove"></span> Annuleer
+    </button>
+  </div>
+</form>

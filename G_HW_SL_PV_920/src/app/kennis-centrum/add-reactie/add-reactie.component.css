@@ -1,0 +1,12 @@
+button {
+  font-size: 100%;
+}
+
+input {
+  font-size: 100%;
+}
+
+textarea {
+  font-size: 100%;
+  white-space: pre-wrap;
+}
